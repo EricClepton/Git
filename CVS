@@ -57,3 +57,37 @@ Sim
 MacCVS
 Mac OS
 Sim
+Tipos de SCV: Centralizado vs. Descentralizado.
+Podemos separar os sistemas de controle de versão em 2 tipos básicos, de acordo com a maneira como
+eles gerenciam seu repositório: centralizado e descentralizado. Nos SCVs centralizados as mudanças são feitas para
+um servidor central único, ao passo que nos SCVs descentralizados, os desenvolvedores trabalham diretamente no
+seu repositório.
+É possível afirmar, também, que SCVs descentralizados utilizam um enfoque "ponta-a-ponta", ao passo
+que SCVs centralizados utilizam um método "cliente/servidor".
+Centralizado: vantagens e desvantagens
+Os SCVs centralizados, apesar de terem um funcionamento muito mais simples que os SCVs
+descentralizados, oferecem algumas características interessantes em relação aos seus concorrentes descentralizados,
+muitas delas dizem respeito a sua própria simplicidade e facilidade de centralizar os dados e controlar um único
+repositório. 
+Como o próprio nome diz, os SCVs centralizados mantém as informações referentes aos arquivos em um
+repositório único, acessível (dentro de um determinado contexto de segurança específico ao SCV em questão) a
+todos os desenvolvedores de um projeto. Pode-se dizer que os SCVs centralizados utilizam uma arquitetura
+Cliente/Servidor.
+Em um SCV centralizado, cada desenvolvedor mantém uma cópia dos arquivos contidos no repositório,
+além de alguns metadados referentes a estes arquivos, que são utilizados para "cruzar" com as informações existentes
+no repositório. Ao efetuar uma mudança em um arquivo qualquer, o desenvolvedor atualiza o repositório, tornando
+publicas suas alterações, através de um processo conhecido como "commit".
+Adicionalmente a isto é importante ressaltar a facilidade de controlar o acesso em um SCVs centralizado
+devido ao fato de as informações estão localizadas em apenas um repositório.Devido à própria simplicidade inerente à sua implementação, os SCVs centralizados tem algumas
+desvantagens em relação aos descentralizados, desta maneira tornando-os pouco indicados para ambientes mais
+complexos, ou aonde os desenvolvedores encontram-se "espalhados" geograficamente e não exista uma conexão
+estável e permanente com o repositório de dados. Desta maneira, pode-se dizer que os SCVs centralizados são
+extremamente dependentes do repositório que contém os dados, de tal maneira que um desenvolvedor não pode
+sequer requisitar informações de um determinado arquivo se não existir uma conexão com o repositório, embora isto
+não o impeça de continuar editando os arquivos..
+Apesar de o fato de existir apenas um repositório seja vantajoso quando relacionado ao controle de
+acesso, isto pode ser um problema se não existir uma política de backup séria e confiável. É importante ressaltar,
+porém, que a identificação da melhor forma de backup (incremental, completo, etc) para um repositório de dados de
+um SCV é variável de acordo com a maneira como o SCV armeza os arquivos e seus metadados, pois alguns SCVs
+se utilizam de bancos de dados para manter suas informações ao passo que outros se utilizam de uma árvore de
+arquivos logicamente ordenada para este fim.
